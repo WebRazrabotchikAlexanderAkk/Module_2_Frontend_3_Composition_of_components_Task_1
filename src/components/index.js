@@ -1,2 +1,2 @@
-export { Field } from './Field/Field';
-export { Information } from './Information/Information';
+export * from './field/field';
+export * from './information/information';

@@ -1,0 +1,12 @@
+.information {
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.status {
+	color: #333;
+	margin: 5px 0;
+}

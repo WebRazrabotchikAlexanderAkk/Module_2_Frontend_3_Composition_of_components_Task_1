@@ -1,13 +1,11 @@
-// Information — будет выводить, чей на данный момент ход (крестика или нолика), либо информацию о победе одной из сторон;
+import { InformationLayout } from './informationLayout';
+import styles from './information.module.css';
 
-import { InformationLayout } from './InformationLayout';
-
-export const Information = ({ currentPlayer, isGameEnded, isDraw }) => {
+export const Information = () => {
+	const information = 'Ходит Крестик';
 	return (
-		<InformationLayout
-			currentPlayer={currentPlayer}
-			isGameEnded={isGameEnded}
-			isDraw={isDraw}
-		/>
+		<div className={styles.information}>
+			<InformationLayout information={information} />
+		</div>
 	);
 };
