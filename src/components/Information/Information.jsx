@@ -1,11 +1,12 @@
-import { InformationLayout } from './informationLayout';
-import styles from './information.module.css';
+import React from 'react';
+import './information.module.css';
 
-export const Information = () => {
-	const information = 'Ходит Крестик';
-	return (
-		<div className={styles.information}>
-			<InformationLayout information={information} />
-		</div>
-	);
+const Information = () => {
+  return (
+    <div className="information">
+      Information Container
+    </div>
+  );
 };
+
+export default Information;

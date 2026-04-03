@@ -1,11 +1,12 @@
-import { FieldLayout } from './fieldLayout';
-import styles from './field.module.css';
+import React from 'react';
+import './field.module.css';
 
-export const Field = () => {
-	const field = new Array(9).fill('');
-	return (
-		<div className={styles.container}>
-			<FieldLayout field={field} />
-		</div>
-	);
+const Field = () => {
+  return (
+    <div className="field">
+      Field Container
+    </div>
+  );
 };
+
+export default Field;
