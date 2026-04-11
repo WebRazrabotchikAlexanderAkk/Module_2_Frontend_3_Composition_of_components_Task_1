@@ -1,11 +1,19 @@
-import React from 'react';
-import './game.module.css';
+import React, { useState } from 'react';
+import GameLayout from './GameLayout';
 
-const Game = () => {
+export const Game = () => {
+  const [currentPlayer, setCurrentPlayer] = useState('X');
+  const [isGameEnded, setIsGameEnded] = useState(false);
+  const [isDraw, setIsDraw] = useState(false);
+  const [field, setField] = useState(Array(9).fill(''));
+
   return (
-    <div className="game">
-      Game Container
-    </div>
+    <GameLayout
+      currentPlayer={currentPlayer}
+      isGameEnded={isGameEnded}
+      isDraw={isDraw}
+      field={field}
+    />
   );
 };
 

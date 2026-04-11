@@ -3,11 +3,15 @@ import styles from './game.module.css';
 import Information from '../Information/Information';
 import Field from '../Field/Field';
 
-const GameLayout = () => {
+const GameLayout = ({ currentPlayer, isGameEnded, isDraw, field }) => {
   return (
     <div className={styles.game}>
-      <Information />
-      <Field />
+      <Information
+        currentPlayer={currentPlayer}
+        isGameEnded={isGameEnded}
+        isDraw={isDraw}
+      />
+      <Field field={field} />
       <button className={styles.restartButton}>Начать заново</button>
     </div>
   );

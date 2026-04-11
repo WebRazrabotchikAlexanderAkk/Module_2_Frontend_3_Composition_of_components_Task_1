@@ -1,10 +1,10 @@
 import React from 'react';
-import './information.module.css';
+import InformationLayout from './InformationLayout';
 
 const Information = () => {
   return (
     <div className="information">
-      Information Container
+      <InformationLayout />
     </div>
   );
 };

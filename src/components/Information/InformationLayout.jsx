@@ -1,10 +1,10 @@
 import React from 'react';
-import './information.module.css';
+import styles from './information.module.css';
 
-const InformationLayout = ({ children }) => {
+const InformationLayout = () => {
   return (
-    <div className="information-layout">
-      {children}
+    <div className={styles.informationLayout}>
+      <div className={styles.informationText}>Ходит: X</div>
     </div>
   );
 };

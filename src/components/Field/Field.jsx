@@ -1,10 +1,10 @@
 import React from 'react';
-import './field.module.css';
+import FieldLayout from './FieldLayout';
 
 const Field = () => {
   return (
     <div className="field">
-      Field Container
+      <FieldLayout />
     </div>
   );
 };
