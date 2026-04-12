@@ -26,7 +26,8 @@ export const checkGameStatus = (newField, currentPlayer) => {
 	}
 
 	if (!newField.includes(EMPTY_CELL)) {
-		return { isGameEnded: false, isDraw: true, winner: null };
+		// Все клетки заполнены и нет победителя — ничья, игра окончена
+		return { isGameEnded: true, isDraw: true, winner: null };
 	}
 
 	const nextPlayer = currentPlayer === PLAYER_X ? PLAYER_O : PLAYER_X;
