@@ -1,3 +1,5 @@
+import { BOARD_SIZE, PLAYER_X, PLAYER_O, EMPTY_CELL } from './constants.js';
+
 export const WIN_PATTERNS = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -15,7 +17,7 @@ export const checkWinner = (board) => {
 	);
 };
 
-export const getInitialField = () => Array(9).fill('');
+export const getInitialField = () => Array(BOARD_SIZE).fill(EMPTY_CELL);
 
 export const checkGameStatus = (newField, currentPlayer) => {
 	const winner = checkWinner(newField);
@@ -23,10 +25,10 @@ export const checkGameStatus = (newField, currentPlayer) => {
 		return { isGameEnded: true, isDraw: false, winner };
 	}
 
-	if (!newField.includes('')) {
+	if (!newField.includes(EMPTY_CELL)) {
 		return { isGameEnded: false, isDraw: true, winner: null };
 	}
 
-	const nextPlayer = currentPlayer === 'X' ? '0' : 'X';
+	const nextPlayer = currentPlayer === PLAYER_X ? PLAYER_O : PLAYER_X;
 	return { isGameEnded: false, isDraw: false, nextPlayer, winner: null };
 };

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import GameLayout from './GameLayout';
 import { getInitialField, checkGameStatus } from '../../utils/gameLogic';
+import { PLAYER_X } from '../../utils/constants';
 
 export const Game = () => {
-	const [currentPlayer, setCurrentPlayer] = useState('X');
+	const [currentPlayer, setCurrentPlayer] = useState(PLAYER_X);
 	const [isGameEnded, setIsGameEnded] = useState(false);
 	const [isDraw, setIsDraw] = useState(false);
 	const [field, setField] = useState(getInitialField());
 
 	const restartGame = () => {
-		setCurrentPlayer('X');
+		setCurrentPlayer(PLAYER_X);
 		setIsGameEnded(false);
 		setIsDraw(false);
 		setField(getInitialField());
