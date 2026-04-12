@@ -3,6 +3,10 @@ import styles from './game.module.css';
 import Information from '../Information/Information';
 import Field from '../Field/Field';
 import PropTypes from 'prop-types';
+import { PLAYER_X, PLAYER_O, EMPTY_CELL } from '../../utils/constants';
+
+// Определяем тип для значения клетки — только X, 0 или пустая строка
+const cellValue = PropTypes.oneOf([PLAYER_X, PLAYER_O, EMPTY_CELL]);
 
 const GameLayout = ({
 	currentPlayer,
@@ -31,7 +35,7 @@ GameLayout.propTypes = {
 	currentPlayer: PropTypes.string.isRequired,
 	isGameEnded: PropTypes.bool.isRequired,
 	isDraw: PropTypes.bool.isRequired,
-	field: PropTypes.arrayOf(PropTypes.string).isRequired,
+	field: PropTypes.arrayOf(cellValue).isRequired,
 	onCellClick: PropTypes.func.isRequired,
 	onRestart: PropTypes.func.isRequired,
 };
