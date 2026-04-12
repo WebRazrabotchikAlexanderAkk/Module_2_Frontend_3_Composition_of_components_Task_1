@@ -1,27 +1,48 @@
 .fieldLayout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .fieldGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+	gap: 20px;
 }
 
 .fieldButton {
-  width: 100px;
-  height: 100px;
-  font-size: 24px;
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+	width: 100px;
+	height: 100px;
+	font-size: 24px;
+	background-color: #f0f0f0;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-.fieldButton:hover {
-  background-color: #e0e0e0;
+.fieldButton:hover:not(:disabled) {
+	background-color: #e0e0e0;
+	transform: scale(1.05);
+}
+
+.fieldButton:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.fieldButton.x {
+	color: #2196f3;
+	font-weight: bold;
+}
+
+.fieldButton.o {
+	color: #4caf50;
+	font-weight: bold;
+}
+
+.fieldButton.x:hover:not(:disabled),
+.fieldButton.o:hover:not(:disabled) {
+	background-color: #d0d0d0;
 }
