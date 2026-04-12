@@ -1,6 +1,10 @@
 import React from 'react';
 import FieldLayout from './FieldLayout';
 import PropTypes from 'prop-types';
+import { PLAYER_X, PLAYER_O, EMPTY_CELL } from '../../utils/constants';
+
+// Определяем тип для значения клетки — только X, 0 или пустая строка
+const cellValue = PropTypes.oneOf([PLAYER_X, PLAYER_O, EMPTY_CELL]);
 
 const Field = ({ field, onCellClick, isGameEnded }) => {
 	return (
@@ -11,7 +15,7 @@ const Field = ({ field, onCellClick, isGameEnded }) => {
 };
 
 Field.propTypes = {
-	field: PropTypes.arrayOf(PropTypes.string).isRequired,
+	field: PropTypes.arrayOf(cellValue).isRequired,
 	onCellClick: PropTypes.func.isRequired,
 	isGameEnded: PropTypes.bool,
 };

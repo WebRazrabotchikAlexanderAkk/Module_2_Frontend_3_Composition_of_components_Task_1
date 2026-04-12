@@ -1,6 +1,10 @@
 import React from 'react';
 import InformationLayout from './InformationLayout';
 import PropTypes from 'prop-types';
+import { PLAYER_X, PLAYER_O } from '../../utils/constants';
+
+// currentPlayer может быть только X или 0
+const playerType = PropTypes.oneOf([PLAYER_X, PLAYER_O]);
 
 const Information = ({ currentPlayer, isGameEnded, isDraw }) => {
 	return (
@@ -15,7 +19,7 @@ const Information = ({ currentPlayer, isGameEnded, isDraw }) => {
 };
 
 Information.propTypes = {
-	currentPlayer: PropTypes.string.isRequired,
+	currentPlayer: playerType.isRequired,
 	isGameEnded: PropTypes.bool.isRequired,
 	isDraw: PropTypes.bool.isRequired,
 };
